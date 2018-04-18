@@ -9,7 +9,6 @@ class PerfilPage extends Component {
         this.state = {
             login: props.match.params.login || ''
         }
-        console.log(props)
     }
 
     static async getInitialData(infosDoRequest) {

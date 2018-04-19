@@ -66,11 +66,16 @@ function notificacaoReducer(state = '', action = {}) {
     return state
 }
 
+function usuarioReducer(state = {}, action = {}) {
+    return state
+}
+
 const configuraStore = (preloadedState) => {
     return createStore(
         combineReducers({
                 tweets: tweetsReducer,
-                notificacao: notificacaoReducer
+                notificacao: notificacaoReducer,
+                usuario: usuarioReducer
         }),
         preloadedState,
         applyMiddleware(

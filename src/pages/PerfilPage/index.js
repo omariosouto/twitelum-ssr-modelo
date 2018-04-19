@@ -7,17 +7,13 @@ class PerfilPage extends Component {
         super()
 
         this.state = {
-            login: props.match.params.login || ''
+            login: props.match.params.login || '',
         }
-        console.log(props)
     }
 
     static async getInitialData(infosDoRequest) {
         return {
-            tweets: { 
-                lista: await fetch('https://twitelum-api.herokuapp.com/tweets').then(res => res.json()),
-                tweetAtivo: {}
-            }
+            usuario: await fetch(`https://twitelum-api.herokuapp.com/usuarios/${infosDoRequest.params.login}`).then(res => res.json()),
         }
     }
 

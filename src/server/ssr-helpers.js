@@ -7,8 +7,7 @@ export function extractActiveRouteInfoFromRoutes(url, router) {
  
   const activeRoute = routesArray.find((route, index) => {
     const routeInfoOnly = { path: route.props.path, exact: route.props.exact }
-    const checkPathWithCurrentRoute = matchPath(url, routeInfoOnly)
-    if(checkPathWithCurrentRoute) {
+    if(matchPath(url, routeInfoOnly)) {
       return true
     }
     return false

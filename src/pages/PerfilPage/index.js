@@ -14,6 +14,7 @@ class PerfilPage extends Component {
     static async getInitialData(infosDoRequest) {
         return {
             usuario: await fetch(`https://twitelum-api.herokuapp.com/usuarios/${infosDoRequest.params.login}`).then(res => res.json()),
+            tweets: await fetch(`https://twitelum-api.herokuapp.com/usuarios/${infosDoRequest.params.login}/tweets`).then(res => res.json()),
         }
     }
 

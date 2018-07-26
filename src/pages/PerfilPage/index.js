@@ -5,7 +5,7 @@ class PerfilPage extends Component {
     
     constructor(props) {
         super()
-
+        console.log('Rodou em')
         this.state = {
             login: props.match.params.login || '',
         }

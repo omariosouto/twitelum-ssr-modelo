@@ -2,8 +2,13 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 
 function tweetsReducer(state = { lista: [], tweetAtivo: {} }, action = {}) {
+    
     if(action.type === 'CARREGA_TWEETS') {
-        state.lista = action.tweets
+        return {
+            ...state,
+            tweetAtivo: {},
+            lista: action.tweets
+        }
     }
 
     if(action.type === 'ADICIONA_TWEET') {
